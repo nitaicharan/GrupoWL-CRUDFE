@@ -1,0 +1,27 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-form-field {
+  margin-bottom: 0.9rem;
+}
+
+button {
+  margin-top: 0.5rem;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.invalidValue {
+  text-align: center;
+  color: #f44336;
+}

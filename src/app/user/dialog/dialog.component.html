@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Deseja excluir o usuário</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Confirma a exclução do usuário selecionado?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial color="primary">Excluir</button>
+</mat-dialog-actions>

@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" class="example-container">
+    <mat-form-field>
+      <input #nome formControlName="nome" matInput placeholder="Nome">
+      <mat-hint>{{ getErrorMessage('nome') }}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input [textMask]="{mask: cpfMask, guide: false}" formControlName="cpf" matInput placeholder="CPF">
+      <mat-hint>{{ getErrorMessage('cpf') }}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input [max]="maxDate" [min]="minDate" disabled="false" formControlName="dataNascimento" matInput
+        [matDatepicker]="picker" placeholder="Data de nascimento" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker disabled="false"></mat-datepicker>
+      <mat-hint>{{ getErrorMessage('dataNascimento') }}</mat-hint>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-card *ngIf="errorMessageField">
+  <mat-card-content>
+    <p class="invalidValue">{{errorMessageField}}</p>
+  </mat-card-content>
+</mat-card>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button (click)="salvar(form.value)" mat-raised-button cdkFocusInitial color="primary"
+    [disabled]="form.invalid">Salvar</button>
+</mat-dialog-actions>
