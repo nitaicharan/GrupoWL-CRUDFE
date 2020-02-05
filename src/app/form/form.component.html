@@ -1,0 +1,51 @@
+<section class="content-header">
+</section>
+
+<section class="content">
+  <section class="invoice">
+
+    {{form.valid}}
+    {{form.value | json}}
+    <form [formGroup]="form" novalidate>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-users"></i> Lista de usuários
+          </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <mt-input-contaner errorMessage="Campo obrigatório e/com apenas números" label="Nome">
+            <input formControlName="nome" type="text" class="form-control" id="inputSuccess" placeholder="Nome"
+              autocomplete="false">
+          </mt-input-contaner>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <mt-input-contaner errorMessage="E-mail inválido" label="CPF">
+            <input formControlName="cpf" type="text" class="form-control" id="inputSuccess" placeholder="CPF"
+              autocomplete="false">
+          </mt-input-contaner>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <mt-input-contaner errorMessage="Data de nascimento inválida" label="E-mail">
+            <input formControlName="dataNascimento" type="text" class="form-control" id="inputSuccess"
+              placeholder="Data de Nascimento" autocomplete="false">
+          </mt-input-contaner>
+        </div>
+      </div>
+      <!-- /.row -->
+    </form>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <button href="order-summary.html" class="btn btn-success pull-right" [disabled]="form.invalid"><i
+            class="fa fa-credit-invalid"></i> Concluir
+          Pedido
+        </button>
+      </div>
+    </div>
+
+  </section>
+</section>
